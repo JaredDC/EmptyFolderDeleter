@@ -6,11 +6,28 @@ namespace EmptyFolderDeleter
 {
     public class Program
     {
-        private static string rootPath = @"C:\ReplaceWithDirectoryPath\";
-
         public static void Main(string[] args)
         {
-            RecurseDirectory(rootPath);
+            var startingPath = string.Empty;
+
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Enter directory path to clean:");
+                startingPath = Console.ReadLine();
+            }
+            else
+            {
+                startingPath = args[0];
+            }
+
+            if (Directory.Exists(startingPath))
+            {
+                RecurseDirectory(startingPath);
+            }
+            else
+            {
+                Console.WriteLine("Invalid directory path.");
+            }
 
             Console.WriteLine();
             Console.WriteLine("Done");
