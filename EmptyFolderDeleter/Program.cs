@@ -6,7 +6,7 @@ namespace EmptyFolderDeleter
 {
     public class Program
     {
-        private static string rootPath = @"C:\Users\stevanich\";
+        private static string rootPath = @"C:\ReplaceWithDirectoryPath\";
 
         public static void Main(string[] args)
         {
