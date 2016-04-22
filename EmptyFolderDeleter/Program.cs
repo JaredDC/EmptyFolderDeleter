@@ -6,7 +6,7 @@ namespace EmptyFolderDeleter
 {
     public class Program
     {
-        private static string rootPath = @"C:\Users\stevanich\";
+        private static string rootPath = @"C:\ReplaceWithDirectoryPath\";
 
         public static void Main(string[] args)
         {
@@ -44,12 +44,12 @@ namespace EmptyFolderDeleter
 
         private static long GetDirectorySize(string path)
         {
-            var files = Directory.GetFiles(path, "*.*");
+            var fileNames = Directory.GetFiles(path, "*.*");
             long size = 0;
 
-            foreach (var name in files)
+            foreach (var fileName in fileNames)
             {
-                var info = new FileInfo(name);
+                var info = new FileInfo(fileName);
 
                 size += info.Length;
             }
